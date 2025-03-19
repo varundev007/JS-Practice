@@ -4,7 +4,14 @@ const promise = createOrder(cart) // return orderId
 
 promise.then(function(orderId){
     //proceedToPayment(orderId)
-    console.log(orderId)    
+    console.log(orderId)
+    return orderId    
+})
+.then(function(orderId){
+    return proceedTopayment(orderId)
+})
+.then(function(paymentInfo){
+    console.log(paymentInfo)
 })
 .catch(function(err){
     console.log(err.message)
@@ -31,7 +38,11 @@ function createOrder(){
     })
     return pr
 }
-
+function proceedTopayment(orderId){
+    return new Promise(function(resolve, reject){
+        resolve("Payment Successful")
+    })
+}
 function validateCart(cart){
-    return false
+    return true
 }
