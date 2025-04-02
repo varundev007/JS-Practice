@@ -1,3 +1,4 @@
+//here enter text will be always in uppercase.
 document.querySelector("#form").addEventListener('keyup',(e) =>{
     console.log(e)
 
